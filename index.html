@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="vi" data-type="product" data-radius="soft" data-buttons="solid" data-motion="quiet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="page-type" content="product">
+  <meta name="site-kind" content="other">
+  <meta name="description" content="AutoLux — nền tảng tìm xe, so sánh, dự toán trả góp và đặt lịch lái thử trực tuyến.">
+  <title>AutoLux — Xe ô tô và phụ kiện cao cấp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Product page / figtree / product hero / flat navy + porcelain / no effects -->
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+      <a class="brand" href="#top" aria-label="AutoLux, trang chủ">
+        <span class="brand__mark" aria-hidden="true"><i></i><i></i></span>
+        <span>AutoLux</span>
+      </a>
+      <nav class="nav__links" aria-label="Điều hướng chính">
+        <a href="#inventory">Xe ô tô</a>
+        <a href="#studio">Showroom 360°</a>
+        <a href="#finance">Trả góp</a>
+        <a href="#showrooms">Showroom</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-button" id="openSearch" aria-label="Mở tìm kiếm">⌕</button>
+        <button class="compare-pill" id="openCompare" aria-label="Mở danh sách so sánh">So sánh <span id="compareCount">0</span></button>
+        <button class="btn btn--primary btn--compact" data-open-booking>Đặt lịch lái thử</button>
+        <button class="menu-button" id="menuButton" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero__head">
+        <div>
+          <p class="eyebrow">Nền tảng xe cao cấp tại Việt Nam</p>
+          <h1>Chọn đúng chiếc xe cho hành trình của bạn</h1>
+        </div>
+        <div class="hero__copy">
+          <p>Tìm xe mới và xe đã qua sử dụng, xem khoang lái 360°, so sánh chi phí và đặt lịch lái thử trong một quy trình.</p>
+          <div class="btn-row">
+            <button class="btn btn--primary" data-open-booking>Đặt lịch lái thử</button>
+            <a class="btn btn--secondary" href="#inventory">Xem kho xe</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/The_frontview_of_Mercedes-Benz_EQS_450_4MATIC_SUV_%28X296%29.jpg" alt="SUV điện cao cấp trong không gian trưng bày" fetchpriority="high">
+        <div class="hero__fact"><strong>250+</strong><span>mẫu xe sẵn sàng tư vấn</span></div>
+      </div>
+      <form class="search-dock wrap" id="searchForm">
+        <label><span>Hãng xe</span><select id="brandFilter"><option value="all">Tất cả hãng</option><option>VinFast</option><option>Mercedes-Benz</option><option>Hyundai</option><option>Mazda</option><option>Toyota</option><option>Porsche</option></select></label>
+        <label><span>Kiểu dáng</span><select id="bodyFilter"><option value="all">Mọi kiểu dáng</option><option>SUV</option><option>Sedan</option><option>Coupe</option></select></label>
+        <label><span>Nhiên liệu</span><select id="fuelFilter"><option value="all">Mọi động cơ</option><option>Điện</option><option>Hybrid</option><option>Xăng</option></select></label>
+        <label class="search-field"><span>Nhu cầu của bạn</span><input id="queryFilter" type="search" placeholder="Ví dụ: SUV điện dưới 2 tỷ"></label>
+        <button class="btn btn--primary" type="submit">Tìm xe phù hợp</button>
+      </form>
+    </section>
+
+    <section class="inventory section" id="inventory">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow">Kho xe tuyển chọn</p><h2>Xe nổi bật hôm nay</h2></div>
+          <div class="filter-tabs" role="tablist" aria-label="Lọc nhanh"><button class="active" data-quick="all">Tất cả</button><button data-quick="Điện">Xe điện</button><button data-quick="SUV">SUV</button><button data-quick="used">Xe đã qua sử dụng</button></div>
+        </div>
+        <p class="result-copy" id="resultCopy">6 mẫu xe phù hợp</p>
+        <div class="car-grid" id="carGrid"></div>
+      </div>
+    </section>
+
+    <section class="studio section section--navy" id="studio">
+      <div class="wrap studio__layout">
+        <div class="studio__copy">
+          <p class="eyebrow">AutoLux Virtual Studio</p>
+          <h2>Xem ngoại thất và khoang lái 360°</h2>
+          <p>Chuyển góc nhìn, thử màu sơn và xem các điểm nổi bật của xe trước khi đến showroom.</p>
+          <div class="view-tabs"><button class="active" data-view="Ngoại thất 360°">Ngoại thất 360°</button><button data-view="Nội thất panorama">Nội thất panorama</button></div>
+          <div class="swatches" aria-label="Chọn màu xe">
+            <button class="active" data-color="#9f1825" style="--swatch:#9f1825" aria-label="Đỏ Crimson"></button>
+            <button data-color="#1b365d" style="--swatch:#1b365d" aria-label="Xanh navy"></button>
+            <button data-color="#e9e7df" style="--swatch:#e9e7df" aria-label="Trắng ngọc trai"></button>
+            <button data-color="#20242a" style="--swatch:#20242a" aria-label="Đen sâu"></button>
+          </div>
+          <button class="btn btn--light" id="rotateCar">Xoay xe 45°</button>
+        </div>
+        <div class="studio__visual" id="studioVisual">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=88" alt="Xe hiệu năng cao trong studio">
+          <span class="studio__mode" id="studioMode">Ngoại thất 360°</span>
+          <div class="orbit" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="accessories section" id="accessories">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow">Tương thích theo dòng xe</p><h2>Phụ kiện được chọn cùng xe</h2></div><a class="link" href="#accessories">Xem tất cả phụ kiện</a></div>
+        <div class="accessory-grid">
+          <article class="accessory-card"><div class="accessory-card__visual dashcam"></div><p>Điện tử</p><h3>Camera hành trình 4K</h3><span>5.490.000 VNĐ</span><button>Thêm vào giỏ</button></article>
+          <article class="accessory-card"><div class="accessory-card__visual charger"></div><p>Sạc điện</p><h3>Bộ sạc tại nhà 7 kW</h3><span>18.900.000 VNĐ</span><button>Kiểm tra tương thích</button></article>
+          <article class="accessory-card"><div class="accessory-card__visual mat"></div><p>Nội thất</p><h3>Thảm sàn chống nước</h3><span>2.690.000 VNĐ</span><button>Thêm vào giỏ</button></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparison section section--cool" id="comparison">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow">So sánh trực tuyến</p><h2>Hai mẫu xe, một quyết định rõ ràng</h2></div><button class="btn btn--secondary" id="comparisonAction">Đổi xe so sánh</button></div>
+        <div class="compare-table">
+          <div class="compare-table__head label">Thông số</div>
+          <div class="compare-table__head"><strong>Hyundai Tucson Turbo</strong><span>959 triệu VNĐ</span></div>
+          <div class="compare-table__head"><strong>Mazda CX-5 Signature</strong><span>979 triệu VNĐ</span></div>
+          <div class="label">Công suất</div><div>180 HP</div><div class="winner">188 HP <b>Mạnh hơn 8 HP</b></div>
+          <div class="label">Mức tiêu hao</div><div class="winner">7,2 L/100 km <b>Tiết kiệm hơn</b></div><div>7,8 L/100 km</div>
+          <div class="label">Gói an toàn</div><div>Hyundai SmartSense</div><div>i-Activsense</div>
+          <div class="label">Âm thanh</div><div>8 loa Bose</div><div class="winner">10 loa Bose <b>Nhiều hơn 2 loa</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="finance section" id="finance">
+      <div class="wrap finance__layout">
+        <div class="finance__copy"><p class="eyebrow">Dự toán trả góp</p><h2>Biết khoản trả hàng tháng trước khi chọn xe</h2><p>Điều chỉnh giá xe, tỷ lệ trả trước và thời hạn vay. Kết quả là dự toán tham khảo theo dư nợ giảm dần.</p><div class="bank-list"><span>VPBank</span><span>TPBank</span><span>HD Saison</span></div></div>
+        <div class="calculator">
+          <label><span>Giá xe <strong id="carPriceText"></strong></span><input id="carPrice" type="range" min="500000000" max="5000000000" step="50000000" value="1250000000"></label>
+          <label><span>Trả trước <strong id="downText"></strong></span><input id="downPayment" type="range" min="20" max="70" step="5" value="30"></label>
+          <label><span>Thời hạn vay <strong id="termText"></strong></span><input id="loanTerm" type="range" min="1" max="8" step="1" value="5"></label>
+          <div class="calc-result"><span>Dự toán mỗi tháng</span><strong id="monthlyPayment"></strong><small>Lãi suất tham khảo 6,9%/năm</small></div>
+          <button class="btn btn--primary" data-open-booking>Đăng ký tư vấn trả góp</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="showrooms section" id="showrooms">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow">Mạng lưới toàn quốc</p><h2>Showroom AutoLux</h2></div><p>Chọn điểm gần bạn để xem xe, lái thử và nhận tư vấn tài chính.</p></div>
+        <div class="showroom-grid">
+          <article><span>Hà Nội</span><h3>AutoLux Tây Hồ</h3><p>Tây Hồ, Hà Nội</p><p>08:00–21:00</p><button class="link" data-open-booking>Đặt lịch tại đây</button></article>
+          <article><span>TP. Hồ Chí Minh</span><h3>AutoLux Quận 1</h3><p>Quận 1, TP. Hồ Chí Minh</p><p>08:00–21:00</p><button class="link" data-open-booking>Đặt lịch tại đây</button></article>
+          <article><span>Đà Nẵng</span><h3>AutoLux Hải Châu</h3><p>Hải Châu, Đà Nẵng</p><p>08:00–20:30</p><button class="link" data-open-booking>Đặt lịch tại đây</button></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="closing">
+    <div class="wrap closing__lead"><h2>Trải nghiệm xe bắt đầu trước khi đến showroom.</h2><button class="btn btn--primary btn--xl" data-open-booking>Đặt lịch lái thử</button></div>
+    <div class="wrap closing__grid">
+      <a class="brand brand--footer" href="#top"><span class="brand__mark" aria-hidden="true"><i></i><i></i></span><span>AutoLux</span></a>
+      <div><strong>Khám phá</strong><a href="#inventory">Xe ô tô</a><a href="#accessories">Phụ kiện</a><a href="#studio">Showroom 360°</a></div>
+      <div><strong>Dịch vụ</strong><a href="#finance">Trả góp</a><button data-open-booking>Đặt lịch lái thử</button><a href="#comparison">So sánh xe</a></div>
+      <div><strong>Hỗ trợ</strong><a href="#showrooms">Hệ thống showroom</a><a href="#top">Tài khoản</a><a href="#top">Liên hệ</a></div>
+    </div>
+    <div class="wrap legal"><span>© 2026 AutoLux</span><span>Quyền riêng tư</span><span>Điều khoản</span><span>Ảnh qua Wikimedia Commons và Unsplash</span></div>
+  </footer>
+
+  <div class="mobile-nav" aria-label="Điều hướng nhanh trên điện thoại"><a href="#inventory">Kho xe</a><button id="mobileChat">Tư vấn</button><button class="primary" data-open-booking>Lái thử</button></div>
+
+  <button class="chat-launcher" id="chatLauncher" aria-label="Mở tư vấn AutoLux"><span>AL</span></button>
+  <aside class="chat-panel" id="chatPanel" aria-hidden="true">
+    <div class="chat-panel__head"><div><strong>Trợ lý AutoLux</strong><small>Tư vấn 24/7</small></div><button id="closeChat" aria-label="Đóng">×</button></div>
+    <div class="chat-panel__body" id="chatBody"><p class="bot">Chào bạn, bạn đang tìm xe theo ngân sách, số chỗ hay loại nhiên liệu?</p></div>
+    <form id="chatForm"><input id="chatInput" placeholder="Nhập nhu cầu của bạn" autocomplete="off"><button>Gửi</button></form>
+  </aside>
+
+  <dialog class="modal booking-modal" id="bookingModal">
+    <button class="modal__close" data-close-modal aria-label="Đóng">×</button>
+    <div class="booking-progress"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span></div>
+    <form id="bookingForm">
+      <section class="booking-step active" data-step="1"><p class="eyebrow">Bước 1/3</p><h2>Chọn xe và địa điểm</h2><label>Mẫu xe<select name="car" required><option>VinFast VF 8 Plus</option><option>Mercedes-Benz EQE SUV</option><option>Hyundai Tucson Turbo</option><option>Mazda CX-5 Signature</option></select></label><div class="choice-row"><label class="choice"><input type="radio" name="locationType" value="showroom" checked><span>Tại showroom</span></label><label class="choice"><input type="radio" name="locationType" value="home"><span>Tại nhà hoặc cơ quan</span></label></div><label>Showroom<select name="showroom"><option>AutoLux Tây Hồ</option><option>AutoLux Quận 1</option><option>AutoLux Hải Châu</option></select></label><button class="btn btn--primary next-step" type="button">Chọn thời gian</button></section>
+      <section class="booking-step" data-step="2"><p class="eyebrow">Bước 2/3</p><h2>Thời gian và thông tin</h2><div class="form-grid"><label>Ngày lái thử<input type="date" name="date" required></label><label>Khung giờ<select name="time"><option>09:00</option><option>10:30</option><option>14:00</option><option>16:30</option></select></label><label>Họ và tên<input name="name" autocomplete="name" required placeholder="Nguyễn Minh An"></label><label>Số điện thoại<input name="phone" inputmode="tel" required placeholder="Nhập số điện thoại"></label><label>Email<input name="email" type="email" autocomplete="email" placeholder="email@example.com"></label><label>Ảnh giấy phép lái xe<input name="license" type="file" accept="image/*"></label></div><div class="modal-actions"><button class="btn btn--secondary prev-step" type="button">Quay lại</button><button class="btn btn--primary" type="submit">Xác nhận lịch</button></div></section>
+      <section class="booking-step booking-success" data-step="3"><div class="success-mark">✓</div><p class="eyebrow">Đã ghi nhận yêu cầu</p><h2>Lịch lái thử đã sẵn sàng</h2><p>Mã hẹn <strong id="bookingCode">AL-2608</strong>. AutoLux sẽ liên hệ để xác nhận xe và khung giờ.</p><div class="fake-qr" aria-label="Mã QR minh họa"><i></i><i></i><i></i><i></i><i></i></div><button class="btn btn--primary" type="button" data-close-modal>Về trang chủ</button></section>
+    </form>
+  </dialog>
+
+  <dialog class="modal detail-modal" id="detailModal"><button class="modal__close" data-close-modal aria-label="Đóng">×</button><div id="detailContent"></div></dialog>
+  <dialog class="modal compare-modal" id="compareModal"><button class="modal__close" data-close-modal aria-label="Đóng">×</button><p class="eyebrow">Danh sách so sánh</p><h2>Chọn tối đa 2 xe</h2><div id="compareList"></div><a class="btn btn--primary" href="#comparison" data-close-modal>Xem bảng so sánh</a></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
